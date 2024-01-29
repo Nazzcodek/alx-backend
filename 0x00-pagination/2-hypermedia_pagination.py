@@ -46,7 +46,7 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
         """this is the hypermedia module"""
-        dataset = self.__dataset()
+        dataset = self.__dataset
         total_data = len(dataset) if dataset else 0
         total_pages = math.ceil(total_data / page_size) if dataset else 0
 
@@ -65,3 +65,5 @@ class Server:
                 'next_page': next_page,
                 'total_pages': total_pages
                 }
+
+        return hypermedia
