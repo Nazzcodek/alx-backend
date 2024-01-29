@@ -40,6 +40,6 @@ class Server:
         if self.dataset() is None:
             return []
 
-        page_index= index_range(page, page_size)
+        page_index = index_range(page, page_size)
         correct_page = data[page_index[0]:page_index[1]]
         return correct_page
