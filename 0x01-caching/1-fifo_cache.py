@@ -16,8 +16,11 @@ class FIFOCache(BC):
 
         data = self.cache_data
         if len(data) >= BC.MAX_ITEMS:
-            discard, _ = data.popitem(last=False)
+            discard = next(iter(data))
+            del data[discard]
             print(f'DISCARD: {discard}')
+
+        data[key] = item
 
     def get(self, key):
         '''this method get cache key'''
